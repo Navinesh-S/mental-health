@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>🐉 SOULS SPACE 🐉</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      font-family: 'Uncial Antiqua', Arial, sans-serif;
+      color: white;
+    }
+
+    body {
+      background-image: url('https://i.pinimg.com/736x/a3/1b/6f/a31b6fc562dc7797a2ff52c3092b6394.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      flex-direction: column;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: -1;
+    }
+
+    /* Heading */
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 80px;
+      margin: 0 0 20px 0;
+    }
+
+    /* Motivational points */
+    .motivation h3 {
+      font-family: 'Uncial Antiqua', cursive;
+      font-size: 28px;
+      margin: 10px 0;
+      line-height: 1.6;
+      color: #ffeaa7;
+    }
+
+    /* Quote box */
+    .quote-box {
+      background: rgba(255, 255, 255, 0.85);
+      color: #222;
+      padding: 90px; /* bigger than before */
+      border-radius: 20px;
+      width: 900px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.5);
+      margin-bottom: 50px;
+      font-family: 'Cinzel', serif;
+    }
+
+    #quote {
+      font-size: 36px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background-color: orange;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: gold;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 1200px) {
+      .quote-box { width: 80%; padding: 70px; }
+      #quote { font-size: 30px; }
+      .motivation h3 { font-size: 24px; }
+    }
+
+    @media screen and (max-width: 700px) {
+      h1 { font-size: 50px; margin-bottom: 20px; }
+      .quote-box { width: 90%; padding: 35px; }
+      #quote { font-size: 24px; }
+      .motivation h3 { font-size: 20px; }
+      button { font-size: 16px; padding: 10px 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1> SOULS SPACE </h1>
+
+  <!-- Motivational points -->
+  <div class="motivation">
+    <h3> Believe in yourself, even when the world doubts you.</h3>
+  </div>
+
+  <!-- Quote Box -->
+  <div class="quote-box">
+    <p id="quote">Click the button to awaken your inner dragon ...</p>
+    <button id="nextBtn" onclick="newQuote()">Click Here</button>
+  </div>
+
+  <script>
+    const quotes = [
+      "Your mind is a dragon - train it with care, and it will carry you to places fear never could.",
+      "Your mind is a dragon-train it with care, and it will carry you to places fear never could.",
+      "Feed your inner dragon with hope, discipline, and courage-it will guard you through life's hardest days.",
+      "A strong mind is like a dragon: calm when needed, powerful when it matters.",
+      "Take care of your thoughts, because your dragon grows from what you give it.",
+      "You already have a dragon inside-you believe in it, and it will help you rise every time you fall.",
+      "Healing is not weakness-it's your dragon learning to fly higher after every storm.",
+      "Your comeback is your dragon spreading its wings for the first time.",
+      "The fire within you is not meant to harm-it's meant to light your path forward.",
+      "A peaceful mind doesn't lack power-it's a dragon that knows when to rest and when to soar.",
+      "Every small step you take strengthens your dragon for the journey ahead."
+    ];
+
+    let currentIndex = 0;
+
+    function newQuote() {
+      if(currentIndex < quotes.length) {
+        document.getElementById("quote").innerText = quotes[currentIndex];
+        currentIndex++;
+        // Change button text after first click
+        document.getElementById("nextBtn").innerText = "Next Quote";
+      }
+      if(currentIndex === quotes.length) {
+        document.getElementById("nextBtn").style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>
